@@ -1,0 +1,19 @@
+{% extends 'BLOG/layout.html' %}
+
+
+{% block body %}
+
+{% for Blog in Blogs %}
+
+
+<div class="card m-5 p-10" style="background-color:rgb(255, 255, 212)">
+    <img class="card-img-top" src={{ Blog.adresa_slike }}  alt="Card image cap">
+    <div class="card-body">
+        <h4 class="card-title">{{ Blog.naslov }}</h4>
+        <p class="card-text text-truncate",  style=" resize: none;" >{{ Blog.tekst }}</p>
+        <a href="{%url 'stranica' Blog.id %}" class="card-link">Read </a>
+    </div>
+</div>
+
+{% endfor %}
+{% endblock %}

@@ -1,0 +1,47 @@
+{% extends "BLOG/layout.html" %}
+
+
+{% block body  %}
+
+<div class=" " style="background-color:rgb(255, 255, 212)">
+    <div class="">
+        <h4 class="">{{ blog_1.naslov }}</h4>
+        <br>
+        <p class="",  >{{ blog_1.tekst }}</p>
+        <h4 class="">Autor:{{ blog_1.autor }}</h4>
+        
+        <br>
+        <br>
+        
+      </div>
+    </div>
+</div>
+    
+   
+    <h2 class="bg-white">Komentari:</h2>
+
+        {%for komentar in komentari%}
+        <div class="card" style="width:18rem;">
+          <div class="card-body">
+            <h5 class="card-title">{{komentar.Nik}}</h5>
+            <h6 class="card-subtitle mb-2 text-muted ">{{ komentar.vrijeme_komentara }}</h6>
+            <p class="card-text">{{ komentar.komentar }}</p>
+        
+          </div>
+        </div>
+        {% endfor %}
+    </div>
+   
+    <div class="mb-3">
+        <form action="" method="post">
+            {% csrf_token %}
+            {{ form }}
+            <input type="submit" name="" id="" class="btn btn-primary"  >
+        </form>
+        
+
+    </div>
+
+
+
+{% endblock %}
